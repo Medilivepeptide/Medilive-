@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MEDILIVE PEPTIDE — Precision · Purity · Science</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tenor+Sans&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ivory:#f8f6f1;
+  --cream:#f0ece3;
+  --warm:#e4ddd1;
+  --white:#ffffff;
+  --charcoal:#1e1c19;
+  --ink:#2e2b26;
+  --brown:#7c6245;
+  --brown-l:#b09070;
+  --brown-xl:#d4b898;
+  --brown-d:#4a3820;
+  --gold:#c4a060;
+  --mid:#8a8078;
+  --light:#c0b8ae;
+  --border:rgba(124,98,69,0.15);
+  --border2:rgba(124,98,69,0.08);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--ink);overflow-x:hidden;cursor:none;}
+
+/* CURSOR */
+#cur{position:fixed;width:7px;height:7px;background:var(--brown);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.08s;}
+#cur2{position:fixed;width:28px;height:28px;border:1px solid var(--brown-l);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left 0.15s ease,top 0.15s ease;opacity:0.6;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 5rem;
+  background:rgba(248,246,241,0.95);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  animation:navIn 0.9s cubic-bezier(0.16,1,0.3,1) both;
+}
+@keyframes navIn{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+.logo{text-decoration:none;display:flex;flex-direction:column;gap:1px;}
+.logo-main{font-family:'Tenor Sans',serif;font-size:1.15rem;letter-spacing:0.32em;color:var(--charcoal);}
+.logo-sub{font-size:0.42rem;letter-spacing:0.58em;color:var(--brown);font-weight:300;text-transform:uppercase;}
+.nav-menu{display:flex;gap:2.5rem;list-style:none;}
+.nav-menu a{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.25s;}
+.nav-menu a:hover{color:var(--brown);}
+.nav-end{display:flex;align-items:center;gap:1.5rem;}
+.nav-sci{font-family:'Cormorant Garamond',serif;font-size:0.78rem;font-style:italic;color:var(--brown-l);letter-spacing:0.05em;}
+.nav-btn{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;background:var(--charcoal);color:var(--white);padding:0.65rem 1.7rem;border:none;cursor:none;transition:background 0.25s;text-decoration:none;}
+.nav-btn:hover{background:var(--brown);}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;position:relative;overflow:hidden;}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:9rem 4rem 6rem 5rem;
+  animation:slideL 1s 0.2s cubic-bezier(0.16,1,0.3,1) both;
+}
+@keyframes slideL{from{opacity:0;transform:translateX(-32px)}to{opacity:1;transform:translateX(0)}}
+.eyebrow{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.8rem;}
+.eyebrow-line{width:28px;height:1px;background:var(--brown);}
+.eyebrow-txt{font-size:0.56rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--brown);font-weight:400;}
+h1.hero-title{
+  font-family:'Tenor Sans',serif;
+  font-size:clamp(3rem,5vw,5rem);
+  letter-spacing:0.2em;
+  color:var(--charcoal);
+  line-height:1.05;
+  margin-bottom:0.5rem;
+}
+.hero-subtitle{
+  font-size:0.62rem;letter-spacing:0.58em;
+  color:var(--brown);font-weight:300;
+  margin-bottom:1.6rem;text-transform:uppercase;
+}
+.hero-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.08rem;font-style:italic;
+  color:var(--brown-l);margin-bottom:1.2rem;letter-spacing:0.04em;
+}
+.hero-desc{
+  font-size:0.82rem;font-weight:300;line-height:2;
+  color:var(--mid);max-width:420px;margin-bottom:3rem;
+}
+.hero-btns{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
+.btn-dark{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;background:var(--charcoal);color:var(--white);padding:0.95rem 2.4rem;border:none;cursor:none;transition:background 0.25s;text-decoration:none;}
+.btn-dark:hover{background:var(--brown);}
+.btn-outline{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:0.95rem 2rem;transition:all 0.25s;cursor:none;text-decoration:none;background:transparent;}
+.btn-outline:hover{border-color:var(--brown);color:var(--brown);}
+.hero-badges{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);}
+.badge{display:flex;flex-direction:column;gap:3px;}
+.badge-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--brown);font-weight:300;}
+.badge-lbl{font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--light);}
+
+/* HERO RIGHT */
+.hero-right{
+  background:var(--cream);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  animation:slideR 1s 0.4s cubic-bezier(0.16,1,0.3,1) both;
+}
+@keyframes slideR{from{opacity:0;transform:translateX(32px)}to{opacity:1;transform:translateX(0)}}
+.hero-bg-rings{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(124,98,69,0.1);}
+.r1{width:280px;height:280px;animation:breathe 6s ease-in-out infinite;}
+.r2{width:400px;height:400px;animation:breathe 6s 1s ease-in-out infinite;}
+.r3{width:520px;height:520px;animation:breathe 6s 2s ease-in-out infinite;}
+@keyframes breathe{0%,100%{opacity:0.5;transform:scale(1)}50%{opacity:1;transform:scale(1.02)}}
+.hero-brand-center{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1.8rem;}
+.molecule-svg{width:180px;height:180px;animation:spin 22s linear infinite;}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.brand-text-center{text-align:center;}
+.btc-main{font-family:'Tenor Sans',serif;font-size:2rem;letter-spacing:0.38em;color:var(--charcoal);display:block;margin-bottom:5px;}
+.btc-pep{font-size:0.55rem;letter-spacing:0.62em;color:var(--brown);font-weight:300;display:block;text-transform:uppercase;}
+.btc-tag{font-family:'Cormorant Garamond',serif;font-size:0.82rem;font-style:italic;color:var(--mid);display:block;margin-top:10px;letter-spacing:0.06em;}
+.hero-float{position:absolute;background:rgba(248,246,241,0.96);border:1px solid var(--border);border-left:2px solid var(--brown);padding:0.9rem 1.3rem;}
+.hf1{bottom:16%;left:6%;}
+.hf2{top:20%;right:6%;}
+.hf-val{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--brown);font-weight:300;}
+.hf-lbl{font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-top:2px;}
+
+/* MARQUEE */
+.marquee-wrap{background:var(--charcoal);padding:0.85rem 0;overflow:hidden;}
+.marquee-inner{display:flex;white-space:nowrap;animation:mq 28s linear infinite;}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-item{display:inline-flex;align-items:center;gap:2.5rem;padding-right:2.5rem;}
+.mq-item span{font-size:0.52rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--brown-l);}
+.mq-dot{color:var(--brown) !important;font-size:0.35rem !important;}
+
+/* SECTION HELPERS */
+.s-eyebrow{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.9rem;}
+.s-line{width:22px;height:1px;background:var(--brown);}
+.s-tag{font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--brown);font-weight:400;}
+.s-title{font-family:'Tenor Sans',serif;font-size:clamp(1.8rem,2.8vw,2.8rem);letter-spacing:0.1em;color:var(--charcoal);line-height:1.2;margin-bottom:1rem;}
+.s-sub{font-size:0.8rem;font-weight:300;line-height:2;color:var(--mid);max-width:480px;}
+
+/* ABOUT */
+#about{display:grid;grid-template-columns:1fr 1fr;gap:5rem;padding:8rem 5rem;background:var(--white);align-items:center;}
+.about-vis{position:relative;height:520px;}
+.av-main{
+  position:absolute;inset:0 2.5rem 2.5rem 0;
+  background:linear-gradient(150deg,var(--cream) 0%,var(--warm) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem;overflow:hidden;
+}
+.av-main::before{
+  content:'';position:absolute;top:-50px;right:-50px;
+  width:220px;height:220px;border-radius:50%;
+  border:1px solid rgba(124,98,69,0.12);
+}
+.av-main-icon{margin-bottom:1.5rem;opacity:0.6;}
+.av-main-label{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--brown-d);margin-bottom:0.4rem;}
+.av-main-text{font-size:0.68rem;color:var(--mid);line-height:1.8;font-weight:300;letter-spacing:0.04em;}
+.av-mini{
+  position:absolute;top:2rem;right:0;
+  width:150px;background:var(--charcoal);
+  padding:1.8rem 1.4rem;text-align:center;
+}
+.av-mini-val{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);}
+.av-mini-lbl{font-size:0.5rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;line-height:1.6;}
+.about-pillars{margin-top:2.8rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.pillar{padding:1.4rem;border:1px solid var(--border);transition:all 0.3s;}
+.pillar:hover{border-color:var(--brown);background:var(--cream);}
+.pillar-n{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--brown-xl);opacity:0.7;margin-bottom:0.4rem;}
+.pillar-name{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:0.3rem;}
+.pillar-desc{font-size:0.7rem;color:var(--mid);line-height:1.7;font-weight:300;}
+
+/* PRODUCTS */
+#products{padding:8rem 5rem;background:var(--ivory);}
+.prod-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;}
+.prod-tabs::-webkit-scrollbar{display:none;}
+.prod-tabs{display:flex;gap:0;margin-bottom:3.5rem;border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;white-space:nowrap;flex-wrap:nowrap;}
+.ptab{font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 1.2rem;cursor:pointer;border:none;background:transparent;color:var(--mid);transition:all 0.25s;border-bottom:2px solid transparent;margin-bottom:-1px;text-align:center;flex-shrink:0;white-space:nowrap;}
+.ptab.active,.ptab:hover{color:var(--brown);border-bottom-color:var(--brown);}
+.prod-panel{display:none;}
+.prod-panel.active{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
+.prod-panel.active.two-col{grid-template-columns:1fr;}
+.prod-card{cursor:none;background:var(--white);border:1px solid var(--border);transition:border-color 0.3s,box-shadow 0.3s;}
+.prod-card:hover{border-color:var(--brown-l);box-shadow:0 8px 40px rgba(124,98,69,0.08);}
+.pc-img{
+  height:220px;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.pc-bg{position:absolute;inset:0;transition:transform 0.6s ease;}
+.prod-card:hover .pc-bg{transform:scale(1.04);}
+.bg-skin{background:linear-gradient(160deg,#f2ede6 0%,#e8e0d4 100%);}
+.bg-fat{background:linear-gradient(160deg,#edf0ec 0%,#dde5da 100%);}
+.bg-sleep{background:linear-gradient(160deg,#ece8f0 0%,#ddd6e8 100%);}
+.pc-mol{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:transparent;overflow:hidden;}
+.pc-vial{width:75%;height:320px;object-fit:cover;object-position:center 30%;filter:drop-shadow(0 12px 32px rgba(0,0,0,0.15));transition:transform 0.4s ease;}
+.prod-card:hover .pc-vial{transform:scale(1.05) translateY(-4px);}
+.pc-badge{position:absolute;top:0.9rem;right:0.9rem;background:var(--brown);color:var(--white);font-size:0.46rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.28rem 0.7rem;}
+.pc-grade{position:absolute;bottom:0.9rem;left:0.9rem;font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.7);background:rgba(30,28,25,0.4);padding:0.25rem 0.6rem;backdrop-filter:blur(4px);}
+.pc-body{padding:1.4rem;}
+.pc-name{font-family:'Tenor Sans',serif;font-size:1rem;letter-spacing:0.1em;color:var(--charcoal);margin-bottom:0.25rem;}
+.pc-eng{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--brown);margin-bottom:0.6rem;}
+.pc-desc{font-size:0.7rem;color:var(--mid);line-height:1.75;font-weight:300;margin-bottom:1rem;}
+.pc-research{
+  font-size:0.62rem;color:var(--brown-l);font-style:italic;
+  font-family:'Cormorant Garamond',serif;
+  padding:0.6rem 0.8rem;background:var(--cream);
+  border-left:2px solid var(--brown-xl);margin-bottom:1rem;
+  line-height:1.6;
+}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid var(--border);}
+.pc-price{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--brown);}
+.pc-order{font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--charcoal);border:1px solid var(--charcoal);padding:0.45rem 1.1rem;background:none;cursor:none;transition:all 0.25s;}
+.pc-order:hover{background:var(--charcoal);color:var(--white);}
+
+/* SCIENCE STRIP */
+.sci-strip{background:var(--charcoal);padding:5rem;display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:center;}
+.sci-left .s-title{color:var(--white);}
+.sci-left .s-sub{color:rgba(255,255,255,0.45);}
+.sci-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+.sci-item{padding:1.5rem;border:1px solid rgba(255,255,255,0.07);transition:border-color 0.3s;}
+.sci-item:hover{border-color:var(--brown-l);}
+.sci-num{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);font-weight:300;margin-bottom:0.4rem;}
+.sci-name{font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.3rem;}
+.sci-desc{font-size:0.68rem;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300;}
+
+/* GALLERY */
+#gallery{padding:8rem 5rem;background:var(--cream);}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:1.8fr 1fr 1fr;
+  grid-template-rows:220px 220px;
+  gap:0.8rem;margin-top:3rem;
+}
+.gi{position:relative;overflow:hidden;cursor:none;}
+.gi:first-child{grid-row:1/3;}
+.gi-bg{position:absolute;inset:0;transition:transform 0.65s ease;}
+.gi:hover .gi-bg{transform:scale(1.06);}
+.gb1{background:linear-gradient(145deg,#c8b89a,#9a7a52);}
+.gb2{background:linear-gradient(145deg,#aec4b6,#6e9a80);}
+.gb3{background:linear-gradient(145deg,#c0b4cc,#8a6ea0);}
+.gb4{background:linear-gradient(145deg,#c4bc9a,#887a52);}
+.gb5{background:linear-gradient(145deg,#a8bcc8,#607a90);}
+.gi-label{position:absolute;bottom:1rem;left:1.2rem;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+.gi-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+
+/* CTA */
+.cta-banner{
+  background:var(--brown);padding:5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:3rem;
+}
+.cta-eyebrow{font-size:0.52rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.9rem;}
+.cta-title{font-family:'Tenor Sans',serif;font-size:2.2rem;letter-spacing:0.1em;color:var(--white);line-height:1.2;margin-bottom:0.7rem;}
+.cta-sub{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:rgba(255,255,255,0.55);}
+.cta-btn{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;background:var(--white);color:var(--brown-d);padding:1.1rem 2.8rem;border:none;cursor:none;flex-shrink:0;text-decoration:none;transition:all 0.25s;}
+.cta-btn:hover{background:var(--charcoal);color:var(--white);}
+
+/* CONTACT */
+#contact{display:grid;grid-template-columns:1fr 1fr;gap:5rem;padding:8rem 5rem;background:var(--white);align-items:start;}
+.c-items{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.4rem;}
+.c-item{display:flex;gap:1.1rem;align-items:flex-start;}
+.c-icon{width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;color:var(--brown);}
+.c-lbl{font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--brown);margin-bottom:0.25rem;}
+.c-val{font-size:0.8rem;color:var(--charcoal);font-weight:300;line-height:1.6;}
+.c-form{background:var(--cream);padding:3rem;border:1px solid var(--border);}
+.cf-title{font-family:'Tenor Sans',serif;font-size:1.4rem;letter-spacing:0.12em;color:var(--charcoal);margin-bottom:0.3rem;}
+.cf-sub{font-family:'Cormorant Garamond',serif;font-size:0.82rem;font-style:italic;color:var(--mid);margin-bottom:2rem;}
+.fg{margin-bottom:1.3rem;}
+.fl{display:block;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);margin-bottom:0.45rem;}
+.fi,.ft{
+  width:100%;background:var(--white);border:1px solid var(--border);
+  padding:0.82rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.8rem;
+  color:var(--charcoal);font-weight:300;outline:none;transition:border-color 0.25s;cursor:none;
+}
+.fi:focus,.ft:focus{border-color:var(--brown);}
+.ft{resize:vertical;min-height:100px;}
+select.fi{appearance:none;}
+.fs{
+  width:100%;background:var(--charcoal);color:var(--white);
+  font-family:'DM Sans',sans-serif;font-size:0.58rem;letter-spacing:0.22em;
+  text-transform:uppercase;padding:1.1rem;border:none;cursor:none;transition:background 0.25s;
+}
+.fs:hover{background:var(--brown);}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:4.5rem 5rem 2rem;}
+.ft-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:2rem;}
+.ft-logo-m{font-family:'Tenor Sans',serif;font-size:1.1rem;letter-spacing:0.32em;color:var(--white);margin-bottom:3px;}
+.ft-logo-p{font-size:0.42rem;letter-spacing:0.55em;color:var(--brown-l);font-weight:300;text-transform:uppercase;margin-bottom:0.9rem;}
+.ft-desc{font-size:0.7rem;color:rgba(255,255,255,0.32);line-height:1.9;font-weight:300;}
+.ft-tag{font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--brown-l);margin-top:0.7rem;}
+.fc-title{font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--brown-l);margin-bottom:1.1rem;}
+.fc-links{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
+.fc-links a{font-size:0.7rem;color:rgba(255,255,255,0.32);text-decoration:none;font-weight:300;transition:color 0.25s;}
+.fc-links a:hover{color:var(--gold);}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;}
+.ft-copy{font-size:0.58rem;color:rgba(255,255,255,0.18);letter-spacing:0.06em;}
+.ft-web{font-family:'Cormorant Garamond',serif;font-size:0.72rem;font-style:italic;color:var(--brown-l);}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.rv.on{opacity:1;transform:translateY(0);}
+.rv2{transition-delay:0.12s;}
+.rv3{transition-delay:0.24s;}
+
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem;}
+  .nav-menu,.nav-sci{display:none;}
+  .hero{grid-template-columns:1fr;}
+  .hero-left{padding:7rem 1.5rem 3rem;}
+  .hero-right{height:360px;}
+  #about,#contact{grid-template-columns:1fr;padding:5rem 1.5rem;}
+  #products,#gallery{padding:5rem 1.5rem;}
+  .prod-panel.active{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .gi:first-child{grid-row:auto;}
+  .ft-top{grid-template-columns:1fr 1fr;}
+  .cta-banner{flex-direction:column;text-align:center;padding:4rem 2rem;}
+  .sci-strip{grid-template-columns:1fr;padding:4rem 1.5rem;gap:2.5rem;}
+  .about-vis{height:380px;}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <span class="logo-main">MEDILIVE</span>
+    <span class="logo-sub">P &nbsp; E &nbsp; P &nbsp; T &nbsp; I &nbsp; D &nbsp; E</span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#about">เกี่ยวกับเรา</a></li>
+    <li><a href="#products">ผลิตภัณฑ์</a></li>
+    <li><a href="#science">งานวิจัย</a></li>
+    <li><a href="#gallery">แกลเลอรี่</a></li>
+    <li><a href="#contact">ติดต่อ</a></li>
+  </ul>
+  <div class="nav-end">
+    <span class="nav-sci">Precision · Purity · Science</span>
+    <a href="#contact" class="nav-btn">สั่งซื้อเลย</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-txt">Medical Peptide · Research Grade · Clinically Referenced</span>
+    </div>
+    <h1 class="hero-title">MEDILIVE</h1>
+    <div class="hero-subtitle">P &nbsp; E &nbsp; P &nbsp; T &nbsp; I &nbsp; D &nbsp; E</div>
+    <div class="hero-tagline">Medical Peptide · Precision · Purity · Science</div>
+    <p class="hero-desc">
+      ผลิตภัณฑ์เปปไทด์ระดับ Research Grade คัดสรรและวิจัยจากสถาบันวิทยาศาสตร์ชั้นนำ
+      ครอบคลุมทั้งการบำรุงผิว ชะลอวัย ควบคุมน้ำหนัก และฟื้นฟูการนอนหลับ
+    </p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-dark">ดูผลิตภัณฑ์ทั้งหมด</a>
+      <a href="#science" class="btn-outline">งานวิจัย</a>
+    </div>
+    <div class="hero-badges">
+      <div class="badge">
+        <span class="badge-val">17+</span>
+        <span class="badge-lbl">งานวิจัยอ้างอิง</span>
+      </div>
+      <div class="badge">
+        <span class="badge-val">3</span>
+        <span class="badge-lbl">กลุ่มผลิตภัณฑ์</span>
+      </div>
+      <div class="badge">
+        <span class="badge-val">100%</span>
+        <span class="badge-lbl">High Purity Standard</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-rings">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+    </div>
+    <div class="hero-brand-center">
+      <div class="molecule-svg">
+        <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="90" cy="90" r="80" stroke="#7c6245" stroke-width="0.4" opacity="0.25"/>
+          <polygon points="90,48 124,68 124,108 90,128 56,108 56,68" stroke="#7c6245" stroke-width="1.2" fill="none" opacity="0.65"/>
+          <polygon points="90,60 116,75 116,105 90,120 64,105 64,75" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.4"/>
+          <circle cx="90" cy="90" r="3.5" fill="#7c6245" opacity="0.55"/>
+          <circle cx="124" cy="68" r="2.5" fill="#7c6245" opacity="0.4"/>
+          <circle cx="124" cy="108" r="2.5" fill="#7c6245" opacity="0.4"/>
+          <circle cx="90" cy="128" r="2.5" fill="#7c6245" opacity="0.4"/>
+          <circle cx="56" cy="108" r="2.5" fill="#7c6245" opacity="0.4"/>
+          <circle cx="56" cy="68" r="2.5" fill="#7c6245" opacity="0.4"/>
+          <circle cx="90" cy="48" r="2.5" fill="#7c6245" opacity="0.4"/>
+          <line x1="90" y1="48" x2="90" y2="28" stroke="#7c6245" stroke-width="0.8" opacity="0.35"/>
+          <line x1="124" y1="68" x2="142" y2="58" stroke="#7c6245" stroke-width="0.8" opacity="0.35"/>
+          <line x1="124" y1="108" x2="142" y2="118" stroke="#7c6245" stroke-width="0.8" opacity="0.35"/>
+          <line x1="90" y1="128" x2="90" y2="148" stroke="#7c6245" stroke-width="0.8" opacity="0.35"/>
+          <line x1="56" y1="108" x2="38" y2="118" stroke="#7c6245" stroke-width="0.8" opacity="0.35"/>
+          <line x1="56" y1="68" x2="38" y2="58" stroke="#7c6245" stroke-width="0.8" opacity="0.35"/>
+          <circle cx="90" cy="28" r="2" fill="#c4a060" opacity="0.55"/>
+          <circle cx="142" cy="58" r="2" fill="#c4a060" opacity="0.55"/>
+          <circle cx="142" cy="118" r="2" fill="#c4a060" opacity="0.55"/>
+          <circle cx="90" cy="148" r="2" fill="#c4a060" opacity="0.55"/>
+          <circle cx="38" cy="118" r="2" fill="#c4a060" opacity="0.55"/>
+          <circle cx="38" cy="58" r="2" fill="#c4a060" opacity="0.55"/>
+        </svg>
+      </div>
+      <div class="brand-text-center">
+        <span class="btc-main">MEDILIVE</span>
+        <span class="btc-pep">P &nbsp; E &nbsp; P &nbsp; T &nbsp; I &nbsp; D &nbsp; E</span>
+        <span class="btc-tag">Medical Peptide · Precision · Purity · Science</span>
+      </div>
+    </div>
+    <div class="hero-float hf1">
+      <div class="hf-val">Research</div>
+      <div class="hf-lbl">Grade Formulation</div>
+    </div>
+    <div class="hero-float hf2">
+      <div class="hf-val">High</div>
+      <div class="hf-lbl">Purity Standard</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <div class="mq-item">
+      <span>Research-Grade Peptide</span><span class="mq-dot">◆</span>
+      <span>High Purity Standard</span><span class="mq-dot">◆</span>
+      <span>Controlled Storage & Handling</span><span class="mq-dot">◆</span>
+      <span>Medical Peptide</span><span class="mq-dot">◆</span>
+      <span>Precision · Purity · Science</span><span class="mq-dot">◆</span>
+      <span>Longevity Science</span><span class="mq-dot">◆</span>
+      <span>Anti-Aging Formulation</span><span class="mq-dot">◆</span>
+      <span>www.medilivepeptide.com</span><span class="mq-dot">◆</span>
+    </div>
+    <div class="mq-item">
+      <span>Research-Grade Peptide</span><span class="mq-dot">◆</span>
+      <span>High Purity Standard</span><span class="mq-dot">◆</span>
+      <span>Controlled Storage & Handling</span><span class="mq-dot">◆</span>
+      <span>Medical Peptide</span><span class="mq-dot">◆</span>
+      <span>Precision · Purity · Science</span><span class="mq-dot">◆</span>
+      <span>Longevity Science</span><span class="mq-dot">◆</span>
+      <span>Anti-Aging Formulation</span><span class="mq-dot">◆</span>
+      <span>www.medilivepeptide.com</span><span class="mq-dot">◆</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-vis rv">
+    <div class="av-main">
+      <div class="av-main-icon">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <polygon points="24,6 40,15 40,33 24,42 8,33 8,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+          <circle cx="24" cy="24" r="3" fill="#7c6245" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="av-main-label">Science Meets Beauty</div>
+      <div class="av-main-text">
+        นวัตกรรมเปปไทด์ขั้นสูง ผสานกับ<br>ภูมิปัญญาความงามและวิทยาศาสตร์สมัยใหม่
+      </div>
+    </div>
+    <div class="av-mini">
+      <div class="av-mini-val">17+</div>
+      <div class="av-mini-lbl">Peer-Reviewed<br>References</div>
+    </div>
+  </div>
+  <div class="rv rv2">
+    <div class="s-eyebrow"><div class="s-line"></div><span class="s-tag">เกี่ยวกับเรา</span></div>
+    <h2 class="s-title">ผู้เชี่ยวชาญด้าน<br>Medical Peptide</h2>
+    <p class="s-sub">
+      MEDILIVE คัดสรรผลิตภัณฑ์เปปไทด์ระดับ Research Grade ที่ได้รับการสนับสนุนโดยงานวิจัยจากวารสารวิทยาศาสตร์ชั้นนำ ครอบคลุม 3 กลุ่มหลัก ได้แก่ การบำรุงผิวและชะลอวัย ควบคุมน้ำหนักและฮอร์โมน และฟื้นฟูการนอนหลับ
+    </p>
+    <div class="about-pillars">
+      <div class="pillar">
+        <div class="pillar-n">01</div>
+        <div class="pillar-name">Precision Formula</div>
+        <div class="pillar-desc">สูตรเปปไทด์แม่นยำ ออกแบบเฉพาะทางวิทยาศาสตร์</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">02</div>
+        <div class="pillar-name">Purity Standard</div>
+        <div class="pillar-desc">วัตถุดิบบริสุทธิ์ High Purity คุณภาพระดับการแพทย์</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">03</div>
+        <div class="pillar-name">Science Based</div>
+        <div class="pillar-desc">อ้างอิงงานวิจัย 17+ ชิ้นจากวารสารนานาชาติ</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">04</div>
+        <div class="pillar-name">Controlled Storage</div>
+        <div class="pillar-desc">ควบคุมอุณหภูมิ 2–8°C เก็บรักษาคุณภาพทุกขั้นตอน</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="prod-hdr rv">
+    <div>
+      <div class="s-eyebrow"><div class="s-line"></div><span class="s-tag">ผลิตภัณฑ์</span></div>
+      <h2 class="s-title">คอลเลกชัน Medical Peptide</h2>
+    </div>
+    <a href="#contact" class="btn-outline">สอบถามราคา</a>
+  </div>
+  <div class="prod-tabs rv">
+    <button class="ptab active" onclick="switchTab(0)">Skin Booster</button>
+    <button class="ptab" onclick="switchTab(1)">Fat Loss & Growth Hormone</button>
+    <button class="ptab" onclick="switchTab(2)">Deep Sleep & Relaxing</button>
+    <button class="ptab" onclick="switchTab(3)">Certificate of Analysis</button>
+  </div>
+
+  <!-- TAB 1: SKIN BOOSTER -->
+  <div class="prod-panel active" id="tab0">
+    <div class="prod-card rv">
+      <div class="pc-img">
+        <div class="pc-bg bg-skin"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3252.jpeg" alt="GHK-Cu"/></div>
+        <div class="pc-badge">Bestseller</div>
+        <div class="pc-grade">Skin Booster</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">GHK-Cu</div>
+        <div class="pc-eng">Copper Peptide</div>
+        <div class="pc-desc">กระตุ้นการสร้างคอลลาเจนและอีลาสติน ช่วยให้ผิวกระชับ ลดริ้วรอย และเร่งการสมานแผล</div>
+        <div class="pc-research">"GHK-Cu มีฤทธิ์ต้านการอักเสบและช่วยฟื้นฟูเนื้อเยื่อผิวหนังอย่างมีนัยสำคัญ" — Pickart (2018), Biomolecules</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2">
+      <div class="pc-img">
+        <div class="pc-bg bg-skin"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3258.jpeg" alt="Glow"/></div>
+        <div class="pc-badge">Triple Formula</div>
+        <div class="pc-grade">Skin Booster</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Glow</div>
+        <div class="pc-eng">BPC-157 + TB-500 + GHK-Cu</div>
+        <div class="pc-desc">สูตรผสมเพื่อการซ่อมแซมเนื้อเยื่อระดับสูง ลดการอักเสบ และฟื้นฟูผิวพรรณให้เปล่งปลั่ง</div>
+        <div class="pc-research">"BPC-157 และ TB-500 ช่วยเร่งการรักษาบาดแผลและเอ็นกล้ามเนื้อ" — Sikiric et al. (2011)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv3">
+      <div class="pc-img">
+        <div class="pc-bg bg-skin"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3260.jpeg" alt="Klow"/></div>
+        <div class="pc-grade">Skin Booster</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Klow</div>
+        <div class="pc-eng">Glow + KPV Peptide</div>
+        <div class="pc-desc">พัฒนาจากสูตร Glow โดยเพิ่ม KPV เพื่อลดการอักเสบของผิวหนังและผดผื่น</div>
+        <div class="pc-research">"KPV ช่วยลดการอักเสบในระดับเซลล์และปรับสมดุลภูมิคุ้มกันผิวหนัง" — Brzoska et al. (2008)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv">
+      <div class="pc-img">
+        <div class="pc-bg bg-skin"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3261.jpeg" alt="Epithalon"/></div>
+        <div class="pc-badge">Anti-Aging</div>
+        <div class="pc-grade">Longevity</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Epithalon</div>
+        <div class="pc-eng">Epitalon · Pineal Peptide</div>
+        <div class="pc-desc">กระตุ้นเอนไซม์ Telomerase ยืดความยาว Telomere ชะลอความเสื่อมในระดับเซลล์</div>
+        <div class="pc-research">"ช่วยยืดอายุขัยและลดความเสี่ยงของโรคจากความเสื่อมตามวัย" — Khavinson (2002)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2">
+      <div class="pc-img">
+        <div class="pc-bg bg-skin"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3259.jpeg" alt="Glutathione"/></div>
+        <div class="pc-badge">Antioxidant</div>
+        <div class="pc-grade">Skin Brightening</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Glutathione</div>
+        <div class="pc-eng">Master Antioxidant</div>
+        <div class="pc-desc">สารต้านอนุมูลอิสระหลัก ผิวกระจ่างใส ลดเม็ดสีเมลานิน และดีท็อกซ์ตับ</div>
+        <div class="pc-research">"ประสิทธิภาพในการลด Oxidative Stress และปรับสภาพสีผิว" — Weschawalit et al. (2017)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv3">
+      <div class="pc-img">
+        <div class="pc-bg bg-skin"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3262.jpeg" alt="Fox04-DRI"/></div>
+        <div class="pc-badge">Senolytic</div>
+        <div class="pc-grade">Advanced Anti-Aging</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Fox04-DRI</div>
+        <div class="pc-eng">Proxofim · Senolytic Peptide</div>
+        <div class="pc-desc">กำจัดเซลล์ที่เสื่อมสภาพ (Senescent Cells) ซึ่งเป็นสาเหตุหลักของความชราและการอักเสบ</div>
+        <div class="pc-research">"ช่วยฟื้นฟูการทำงานของอวัยวะในหนูทดลองที่แก่ชรา" — Baar et al., Cell (2017)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: FAT LOSS -->
+  <div class="prod-panel" id="tab1">
+    <div class="prod-card rv">
+      <div class="pc-img">
+        <div class="pc-bg bg-fat"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3253.jpeg" alt="Tirzepatide"/></div>
+        <div class="pc-badge">FDA Approved*</div>
+        <div class="pc-grade">Fat Loss</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Tirzepatide</div>
+        <div class="pc-eng">GLP-1 & GIP Receptor Agonist</div>
+        <div class="pc-desc">ลดความอยากอาหาร เร่งการเผาผลาญไขมัน และควบคุมระดับน้ำตาลในเลือด</div>
+        <div class="pc-research">"น้ำหนักลดลงได้มากกว่า 20% ในผู้ที่มีภาวะอ้วน" — SURMOUNT-1 Trial, NEJM (2022)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2">
+      <div class="pc-img">
+        <div class="pc-bg bg-fat"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3254.jpeg" alt="Retatrutide"/></div>
+        <div class="pc-badge">Triple Agonist</div>
+        <div class="pc-grade">Fat Loss</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Retatrutide</div>
+        <div class="pc-eng">Triple Agonist GLP-1/GIP/Glucagon</div>
+        <div class="pc-desc">กระตุ้นตัวรับฮอร์โมน 3 ชนิดพร้อมกัน เพื่อการลดน้ำหนักที่ทรงพลังที่สุด</div>
+        <div class="pc-research">"ผลการลดน้ำหนักที่รวดเร็วและมีประสิทธิภาพสูงกว่าเทคโนโลยีเดิม" — Frias et al., The Lancet (2023)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv3">
+      <div class="pc-img">
+        <div class="pc-bg bg-fat"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3255.jpeg" alt="MOTS-c"/></div>
+        <div class="pc-grade">Metabolism</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">MOTS-c</div>
+        <div class="pc-eng">Mitochondrial Peptide</div>
+        <div class="pc-desc">เพิ่มประสิทธิภาพการใช้พลังงานของเซลล์ เร่งการเผาผลาญ และเพิ่มความทนทาน</div>
+        <div class="pc-research">"ลดภาวะดื้ออินซูลินและป้องกันโรคอ้วนจากการบริโภคไขมันสูง" — Lee et al., Cell Metabolism (2015)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv">
+      <div class="pc-img">
+        <div class="pc-bg bg-fat"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3256.jpeg" alt="AOD-9604/9606"/></div>
+        <div class="pc-grade">Lipolytic</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">AOD-9604/9606</div>
+        <div class="pc-eng">HGH Fragment · Lipolytic</div>
+        <div class="pc-desc">เน้นการเผาผลาญไขมันสะสมโดยเฉพาะ โดยไม่ส่งผลต่อระดับน้ำตาลในเลือด</div>
+        <div class="pc-research">"ช่วยลดไขมันหน้าท้องอย่างจำเพาะ" — Heffernan et al. (2001), Endocrinology</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2">
+      <div class="pc-img">
+        <div class="pc-bg bg-fat"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3257.jpeg" alt="5-Amino (1MQ)"/></div>
+        <div class="pc-grade">NNMT Inhibitor</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">5-Amino (1MQ)</div>
+        <div class="pc-eng">NNMT Inhibitor</div>
+        <div class="pc-desc">ยับยั้งเอนไซม์ที่สะสมไขมัน เพิ่มประสิทธิภาพการเผาผลาญพลังงานและกล้ามเนื้อ</div>
+        <div class="pc-research">"ลดมวลไขมันอย่างรวดเร็วและเพิ่มประสิทธิภาพกล้ามเนื้อ" — Neelakantan et al. (2018)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv3">
+      <div class="pc-img">
+        <div class="pc-bg bg-fat"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3263.jpeg" alt="Tesamorelin"/></div>
+        <div class="pc-badge">FDA Approved</div>
+        <div class="pc-grade">Growth Hormone</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Tesamorelin</div>
+        <div class="pc-eng">GHRH Analog</div>
+        <div class="pc-desc">กระตุ้นการหลั่ง Growth Hormone ตามธรรมชาติ เน้นลดไขมันในช่องท้อง</div>
+        <div class="pc-research">"ได้รับการรับรองจาก FDA สำหรับลดไขมันหน้าท้อง" — Falutz et al., NEJM (2007)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="prod-card rv">
+      <div class="pc-img">
+        <div class="pc-bg bg-fat"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3268.jpeg" alt="HGH Frag 176-191"/></div>
+        <div class="pc-grade">Lipolytic Fragment</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">HGH Frag 176-191</div>
+        <div class="pc-eng">Lipolytic Fragment · 10 IU</div>
+        <div class="pc-desc">ส่วนย่อยของ HGH ที่เน้นการสลายไขมันโดยเฉพาะ กระตุ้น Beta-3 Adrenergic Receptor เพิ่มการเผาผลาญและ Thermogenesis โดยไม่กระทบ IGF-1 หรือ Insulin</div>
+        <div class="pc-research">"Fragment 176-191 เพิ่ม lipolytic activity และลด lipogenic activity ในเนื้อเยื่อไขมันของทั้งหนูและมนุษย์" — Heffernan et al. (2001), Endocrinology</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="prod-card rv rv2">
+      <div class="pc-img">
+        <div class="pc-bg bg-fat"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3269.jpeg" alt="NAD+"/></div>
+        <div class="pc-badge">Longevity</div>
+        <div class="pc-grade">Cellular Energy</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">NAD+</div>
+        <div class="pc-eng">Nicotinamide Adenine Dinucleotide · 500 MG</div>
+        <div class="pc-desc">Coenzyme สำคัญในทุกเซลล์ของร่างกาย ช่วยแปลงอาหารเป็นพลังงาน ซ่อมแซม DNA กระตุ้น Sirtuin เพื่อชะลอวัย และฟื้นฟู Mitochondria ระดับเซลล์</div>
+        <div class="pc-research">"NAD+ repletion ฟื้นฟู Mitochondria และ Stem Cell function และยืดอายุในหนูทดลอง" — Mouchiroud et al., Science (2016)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: SLEEP -->
+  <div class="prod-panel two-col" id="tab2">
+    <div class="prod-card rv" style="display:grid;grid-template-columns:1fr;">
+      <div class="pc-img">
+        <div class="pc-bg bg-sleep"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3264.jpeg" alt="DSIP"/></div>
+        <div class="pc-grade">Deep Sleep</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">DSIP</div>
+        <div class="pc-eng">Delta Sleep-Inducing Peptide</div>
+        <div class="pc-desc">ปรับสมดุลการนอนหลับให้เข้าสู่ช่วง Deep Sleep ลดความเครียดและ Cortisol</div>
+        <div class="pc-research">"ลดอาการนอนไม่หลับและปรับสมดุลฮอร์โมนความเครียด" — Pollard et al. (1987)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2">
+      <div class="pc-img">
+        <div class="pc-bg bg-sleep"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3265.jpeg" alt="Selank / N-Acetyl"/></div>
+        <div class="pc-grade">Anxiolytic</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Selank / N-Acetyl</div>
+        <div class="pc-eng">Anxiolytic Peptide</div>
+        <div class="pc-desc">ลดความวิตกกังวล ช่วยให้มีสมาธิและอารมณ์คงที่ โดยไม่ทำให้ง่วงซึม</div>
+        <div class="pc-research">"ประสิทธิภาพใกล้เคียงกับยากลุ่มคลายกังวล" — Zozulya et al. (2008)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv">
+      <div class="pc-img">
+        <div class="pc-bg bg-sleep"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3266.jpeg" alt="Semax / N-Acetyl"/></div>
+        <div class="pc-badge">Nootropic</div>
+        <div class="pc-grade">Brain Function</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Semax / N-Acetyl</div>
+        <div class="pc-eng">Nootropic Peptide</div>
+        <div class="pc-desc">เพิ่มความจำ การเรียนรู้ และการโฟกัส ป้องกันเซลล์สมองขาดออกซิเจน</div>
+        <div class="pc-research">"ใช้รักษาอาการทางสมองและฟื้นฟูหลังโรคหลอดเลือดสมอง" — Gusev et al. (2005)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2">
+      <div class="pc-img">
+        <div class="pc-bg bg-sleep"></div>
+        <div class="pc-mol"><img class="pc-vial" src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3267.jpeg" alt="Pinealon"/></div>
+        <div class="pc-grade">Neuroprotective</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Pinealon</div>
+        <div class="pc-eng">Neuroprotective Peptide</div>
+        <div class="pc-desc">ฟื้นฟูเซลล์ประสาท ปรับสมดุลนาฬิกาชีวิต และป้องกันความจำเสื่อมตามวัย</div>
+        <div class="pc-research">"ปกป้องเซลล์สมองจากสารพิษและช่วยการนอนหลับในผู้สูงอายุ" — Arutjunyan et al. (2012)</div><div class="pc-foot">
+          <span class="pc-price">สอบถามราคา</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สั่งซื้อ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- TAB 4: COA -->
+  <div class="prod-panel" id="tab3">
+
+    <div class="prod-card rv " style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:#fff;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <img src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/a9915a8e-00a2-4313-940c-3b7c452ce736.jpeg" alt="Tirzepatide COA" style="width:100%;height:100%;object-fit:cover;object-position:top;"/>
+        </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Tirzepatide</div>
+        <div class="pc-eng">GLP-1 & GIP Agonist · 10MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">Retatrutide</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Triple Agonist</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">10MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Retatrutide</div>
+        <div class="pc-eng">Triple Agonist · 10MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv3" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">GHK-Cu</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Copper Peptide</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">100MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">GHK-Cu</div>
+        <div class="pc-eng">Copper Peptide · 100MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv " style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">Glow</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">BPC-157 + TB-500 + GHK-Cu</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">70MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Glow</div>
+        <div class="pc-eng">BPC-157 + TB-500 + GHK-Cu · 70MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">Klow</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Glow + KPV Peptide</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">80MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Klow</div>
+        <div class="pc-eng">Glow + KPV Peptide · 80MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv3" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">Epithalon</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Pineal Peptide</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">10MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Epithalon</div>
+        <div class="pc-eng">Pineal Peptide · 10MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv " style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">Glutathione</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Master Antioxidant</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">1500MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Glutathione</div>
+        <div class="pc-eng">Master Antioxidant · 1500MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">Fox04-DRI</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Senolytic Peptide</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">10MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Fox04-DRI</div>
+        <div class="pc-eng">Senolytic Peptide · 10MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv3" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">MOTS-c</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Mitochondrial Peptide</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">10MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">MOTS-c</div>
+        <div class="pc-eng">Mitochondrial Peptide · 10MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv " style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">AOD-9604/9606</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">HGH Fragment</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">5MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">AOD-9604/9606</div>
+        <div class="pc-eng">HGH Fragment · 5MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">5-Amino (1MQ)</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">NNMT Inhibitor</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">10MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">5-Amino (1MQ)</div>
+        <div class="pc-eng">NNMT Inhibitor · 10MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv3" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">Tesamorelin</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">GHRH Analog</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">5MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Tesamorelin</div>
+        <div class="pc-eng">GHRH Analog · 5MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv " style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">HGH Frag 176-191</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Lipolytic Fragment</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">10IU</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">HGH Frag 176-191</div>
+        <div class="pc-eng">Lipolytic Fragment · 10IU</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">NAD+</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Nicotinamide Adenine Dinucleotide</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">500MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">NAD+</div>
+        <div class="pc-eng">Nicotinamide Adenine Dinucleotide · 500MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv3" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">DSIP</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Delta Sleep-Inducing Peptide</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">5MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">DSIP</div>
+        <div class="pc-eng">Delta Sleep-Inducing Peptide · 5MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv " style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">Selank / N-Acetyl</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Anxiolytic Peptide</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">10MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Selank / N-Acetyl</div>
+        <div class="pc-eng">Anxiolytic Peptide · 10MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv2" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">Semax / N-Acetyl</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Nootropic Peptide</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">5MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Semax / N-Acetyl</div>
+        <div class="pc-eng">Nootropic Peptide · 5MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card rv rv3" style="cursor:default;">
+      <div class="pc-img" style="height:190px;padding:0;background:none;overflow:hidden;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#f5f1eb 0%,#ede6d8 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 200 160" fill="none" preserveAspectRatio="xMidYMid slice">
+<path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 45 Q50 60 100 45 Q150 30 200 45" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 75 Q50 90 100 75 Q150 60 200 75" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 105 Q50 120 100 105 Q150 90 200 105" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<path d="M0 135 Q50 150 100 135 Q150 120 200 135" stroke="#7c6245" stroke-width="1.2" fill="none"/>
+<line x1="25" y1="15" x2="25" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="15" x2="75" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="15" x2="125" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="175" y1="15" x2="175" y2="45" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="25" y1="75" x2="25" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="75" y1="75" x2="75" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<line x1="125" y1="75" x2="125" y2="105" stroke="#7c6245" stroke-width="0.6" opacity="0.5"/>
+<circle cx="25" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="100" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="175" cy="15" r="1.5" fill="#c4a060" opacity="0.6"/>
+<circle cx="25" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+<circle cx="100" cy="45" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+          <div style="position:absolute;top:10px;left:10px;border-top:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;top:10px;right:10px;border-top:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;left:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-left:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div><div style="position:absolute;bottom:10px;right:10px;border-bottom:1px solid rgba(124,98,69,0.35);border-right:1px solid rgba(124,98,69,0.35);width:16px;height:16px;"></div>
+          <div style="position:relative;z-index:1;text-align:center;padding:1rem;">
+            <svg width="32" height="32" viewBox="0 0 52 52" fill="none" style="margin:0 auto 0.5rem;">
+<polygon points="26,4 46,15 46,37 26,48 6,37 6,15" stroke="#7c6245" stroke-width="1" fill="none" opacity="0.5"/>
+<polygon points="26,12 38,19 38,33 26,40 14,33 14,19" stroke="#c4a060" stroke-width="0.7" fill="none" opacity="0.3"/>
+<circle cx="26" cy="26" r="1.5" fill="#7c6245" opacity="0.5"/>
+</svg>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.5rem;"></div>
+            <div style="font-family:'Tenor Sans',serif;font-size:0.72rem;letter-spacing:0.15em;color:#2e2b26;margin-bottom:0.1rem;">Pinealon</div>
+            <div style="font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:#7c6245;margin-bottom:0.1rem;">Neuroprotective Peptide</div>
+            <div style="font-size:0.4rem;letter-spacing:0.1em;color:#9a9088;margin-bottom:0.5rem;">5MG</div>
+            <div style="width:30px;height:1px;background:rgba(124,98,69,0.3);margin:0 auto 0.4rem;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:0.58rem;font-style:italic;color:rgba(124,98,69,0.55);margin-bottom:0.3rem;">Certificate of Analysis</div>
+            <div style="font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(124,98,69,0.4);border:1px solid rgba(124,98,69,0.2);padding:0.2rem 0.5rem;display:inline-block;">Pending Upload</div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Pinealon</div>
+        <div class="pc-eng">Neuroprotective Peptide · 5MG</div>
+        <div class="pc-foot" style="margin-top:0.8rem;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:var(--mid);">Research Grade</span>
+          <button class="pc-order" onclick="document.getElementById('contact').scrollIntoView()">สอบถาม</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- SCIENCE STRIP -->
+<section class="sci-strip" id="science">
+  <div class="sci-left rv">
+    <div class="s-eyebrow"><div class="s-line"></div><span class="s-tag">งานวิจัย</span></div>
+    <h2 class="s-title">อ้างอิงจาก<br>วารสารวิทยาศาสตร์<br>นานาชาติ</h2>
+    <p class="s-sub" style="color:rgba(255,255,255,0.42)">ทุกผลิตภัณฑ์ของ MEDILIVE ได้รับการสนับสนุนจากงานวิจัย peer-reviewed จากวารสารชั้นนำ</p>
+  </div>
+  <div class="sci-grid rv rv2">
+    <div class="sci-item">
+      <div class="sci-num">NEJM</div>
+      <div class="sci-name">New England Journal of Medicine</div>
+      <div class="sci-desc">Tirzepatide, Tesamorelin</div>
+    </div>
+    <div class="sci-item">
+      <div class="sci-num">Cell</div>
+      <div class="sci-name">Cell · Cell Metabolism</div>
+      <div class="sci-desc">Fox04-DRI, MOTS-c</div>
+    </div>
+    <div class="sci-item">
+      <div class="sci-num">Lancet</div>
+      <div class="sci-name">The Lancet</div>
+      <div class="sci-desc">Retatrutide Phase 2</div>
+    </div>
+    <div class="sci-item">
+      <div class="sci-num">17+</div>
+      <div class="sci-name">Total References</div>
+      <div class="sci-desc">Biomolecules, Endocrinology, JID และอื่นๆ</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="rv">
+    <div class="s-eyebrow"><div class="s-line"></div><span class="s-tag">แกลเลอรี่</span></div>
+    <h2 class="s-title">ผลิตภัณฑ์<br>ระดับพรีเมียม</h2>
+  </div>
+  <div class="gallery-grid rv rv2">
+    <div class="gi">
+      <div class="gi-bg gb1"></div>
+      <div class="gi-icon">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><polygon points="30,8 50,19 50,41 30,52 10,41 10,19" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/><circle cx="30" cy="30" r="6" fill="rgba(255,255,255,0.2)"/></svg>
+      </div>
+      <div class="gi-label">Skin Booster Collection</div>
+    </div>
+    <div class="gi">
+      <div class="gi-bg gb2"></div>
+      <div class="gi-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="15" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/></svg></div>
+      <div class="gi-label">Research Grade</div>
+    </div>
+    <div class="gi">
+      <div class="gi-bg gb3"></div>
+      <div class="gi-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M10 20 Q20 5 30 20 Q20 35 10 20Z" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/></svg></div>
+      <div class="gi-label">Deep Sleep & Relax</div>
+    </div>
+    <div class="gi">
+      <div class="gi-bg gb4"></div>
+      <div class="gi-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="8" y="8" width="24" height="24" rx="4" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/></svg></div>
+      <div class="gi-label">Controlled Storage</div>
+    </div>
+    <div class="gi">
+      <div class="gi-bg gb5"></div>
+      <div class="gi-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><polygon points="20,5 34,13 34,27 20,35 6,27 6,13" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/></svg></div>
+      <div class="gi-label">Fat Loss & GH</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- VERIFICATION SECTION -->
+<section style="background:linear-gradient(160deg,#0a0f1e 0%,#0d1a3a 50%,#0a0f1e 100%);padding:5rem 1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(26,79,160,0.15);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(26,79,160,0.1);pointer-events:none;"></div>
+  <div style="max-width:600px;margin:0 auto;position:relative;z-index:2;">
+    
+    <!-- Tag -->
+    <div style="display:inline-flex;align-items:center;gap:0.6rem;background:rgba(26,79,160,0.15);border:1px solid rgba(26,79,160,0.3);padding:0.4rem 1rem;margin-bottom:2rem;">
+      <span style="width:6px;height:6px;border-radius:50%;background:#1a4fa0;display:inline-block;"></span>
+      <span style="font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:#4a8fe0;font-weight:400;">Authenticity Verified</span>
+    </div>
+
+    <!-- Title -->
+    <h2 style="font-family:'Tenor Sans',serif;font-size:clamp(2rem,8vw,3.5rem);letter-spacing:0.12em;color:#ffffff;line-height:1.1;margin-bottom:0.4rem;">UNIQUE</h2>
+    <h2 style="font-family:'Tenor Sans',serif;font-size:clamp(2rem,8vw,3.5rem);letter-spacing:0.12em;color:#1a4fa0;line-height:1.1;margin-bottom:1.5rem;">VERIFICATION<br>CODE</h2>
+
+    <!-- Description -->
+    <p style="font-size:0.82rem;font-weight:300;line-height:2;color:rgba(255,255,255,0.5);margin-bottom:2.5rem;">สินค้าทุกชิ้นของ MEDILIVE PEPTIDE มาพร้อม Unique Verification Code เพื่อยืนยันความแท้ ความบริสุทธิ์ และคุณภาพระดับ Research Grade</p>
+
+    <!-- QR CODE - ใหญ่ตรงกลาง -->
+    <div style="background:#ffffff;padding:1.5rem;border:3px solid #1a4fa0;margin-bottom:1.5rem;position:relative;">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#0a2fa0,#1a4fa0,#4a8fe0);"></div>
+      <img src="https://raw.githubusercontent.com/medilivepeptide/Medilive-/main/IMG_3272.jpeg" alt="MEDILIVE PEPTIDE Verification QR Code" style="width:100%;display:block;"/>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <div style="font-family:'Tenor Sans',serif;font-size:0.75rem;letter-spacing:0.2em;color:#0a2fa0;">MEDILIVE PEPTIDE</div>
+          <div style="font-size:0.5rem;letter-spacing:0.15em;text-transform:uppercase;color:#999;margin-top:2px;">Official Authentication Label</div>
+        </div>
+        <div style="width:28px;height:28px;background:#0a2fa0;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span style="color:white;font-size:0.7rem;">✓</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scan instruction -->
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <div style="font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:#4a8fe0;margin-bottom:0.4rem;">▼ Scan to Verify Authenticity</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:0.85rem;font-style:italic;color:rgba(255,255,255,0.35);">www.medilivepeptide.com</div>
+    </div>
+
+    <!-- Checklist -->
+    <div style="display:flex;flex-direction:column;gap:0.8rem;margin-bottom:2rem;">
+      <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.2rem;border:1px solid rgba(26,79,160,0.3);background:rgba(26,79,160,0.08);">
+        <div style="width:28px;height:28px;border:1px solid rgba(26,79,160,0.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="color:#4a8fe0;font-size:0.7rem;">✓</span></div>
+        <div><div style="font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:#ffffff;margin-bottom:2px;">Research-Grade Formulation</div><div style="font-size:0.62rem;color:rgba(255,255,255,0.35);font-weight:300;">คุณภาพระดับการวิจัย ทุกล็อตผลิต</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.2rem;border:1px solid rgba(26,79,160,0.3);background:rgba(26,79,160,0.08);">
+        <div style="width:28px;height:28px;border:1px solid rgba(26,79,160,0.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="color:#4a8fe0;font-size:0.7rem;">✓</span></div>
+        <div><div style="font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:#ffffff;margin-bottom:2px;">High Purity Standard</div><div style="font-size:0.62rem;color:rgba(255,255,255,0.35);font-weight:300;">ความบริสุทธิ์สูง ผ่านการตรวจสอบ</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.2rem;border:1px solid rgba(26,79,160,0.3);background:rgba(26,79,160,0.08);">
+        <div style="width:28px;height:28px;border:1px solid rgba(26,79,160,0.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="color:#4a8fe0;font-size:0.7rem;">✓</span></div>
+        <div><div style="font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:#ffffff;margin-bottom:2px;">Official Authentication Label</div><div style="font-size:0.62rem;color:rgba(255,255,255,0.35);font-weight:300;">ป้ายยืนยันความแท้อย่างเป็นทางการ</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.2rem;border:1px solid rgba(26,79,160,0.3);background:rgba(26,79,160,0.08);">
+        <div style="width:28px;height:28px;border:1px solid rgba(26,79,160,0.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="color:#4a8fe0;font-size:0.7rem;">✓</span></div>
+        <div><div style="font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:#ffffff;margin-bottom:2px;">Controlled Storage & Handling</div><div style="font-size:0.62rem;color:rgba(255,255,255,0.35);font-weight:300;">จัดเก็บอุณหภูมิ 2–8°C ทุกขั้นตอน</div></div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:0.85rem;font-style:italic;color:rgba(255,255,255,0.25);">MEDILIVE PEPTIDE · Precision · Purity · Science</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner rv">
+  <div>
+    <div class="cta-eyebrow">For professional / research reference only</div>
+    <div class="cta-title">เริ่มต้นการดูแลสุขภาพ<br>อย่างมีวิทยาศาสตร์</div>
+    <div class="cta-sub">ปรึกษาผู้เชี่ยวชาญได้ฟรี · จัดส่งทั่วประเทศ · Refrigerate 2–8°C</div>
+  </div>
+  <a href="#contact" class="cta-btn">ติดต่อเราเลย →</a>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="rv">
+    <div class="s-eyebrow"><div class="s-line"></div><span class="s-tag">ติดต่อเรา</span></div>
+    <h2 class="s-title">พูดคุยกับ<br>ผู้เชี่ยวชาญ</h2>
+    <p class="s-sub">ทีมงานพร้อมให้คำปรึกษาเรื่องผลิตภัณฑ์ที่เหมาะกับคุณโดยเฉพาะ</p>
+    <div class="c-items">
+      <div class="c-item">
+        <div class="c-icon">✉</div>
+        <div>
+          <div class="c-lbl">เว็บไซต์</div>
+          <div class="c-val">www.medilivepeptide.com</div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon">◈</div>
+        <div>
+          <div class="c-lbl">Line Official</div>
+          <div class="c-val">medilivepeptide</div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon">☎</div>
+        <div>
+          <div class="c-lbl">โทรศัพท์</div>
+          <div class="c-val">สอบถามผ่านช่องทางออนไลน์</div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon">◇</div>
+        <div>
+          <div class="c-lbl">การจัดเก็บ</div>
+          <div class="c-val">Refrigerate 2–8°C · Keep away from light · Handle with sterile technique</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="c-form rv rv2">
+    <div class="cf-title">สอบถามผลิตภัณฑ์</div>
+    <div class="cf-sub">ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง</div>
+    <div class="fg">
+      <label class="fl">ชื่อ-นามสกุล</label>
+      <input type="text" class="fi" placeholder="กรอกชื่อของคุณ"/>
+    </div>
+    <div class="fg">
+      <label class="fl">เบอร์โทร / Line ID</label>
+      <input type="text" class="fi" placeholder="ช่องทางติดต่อ"/>
+    </div>
+    <div class="fg">
+      <label class="fl">กลุ่มผลิตภัณฑ์ที่สนใจ</label>
+      <select class="fi">
+        <option value="">เลือกกลุ่มผลิตภัณฑ์</option>
+        <option>Skin Booster (บำรุงผิวพรรณ)</option>
+        <option>Fat Loss & Growth Hormone</option>
+        <option>Deep Sleep & Relaxing</option>
+        <option>สนใจหลายกลุ่ม</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label class="fl">ข้อความ / คำถาม</label>
+      <textarea class="ft" placeholder="สอบถามรายละเอียด หรือปรึกษาเรื่องผลิตภัณฑ์ที่เหมาะกับคุณ..."></textarea>
+    </div>
+    <button class="fs">ส่งข้อความ →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-logo-m">MEDILIVE</div>
+      <div class="ft-logo-p">P &nbsp; E &nbsp; P &nbsp; T &nbsp; I &nbsp; D &nbsp; E</div>
+      <div class="ft-desc">ผู้เชี่ยวชาญด้าน Medical Peptide ระดับ Research Grade อ้างอิงจากงานวิจัยนานาชาติกว่า 17 ชิ้น ครอบคลุม Skin Booster, Fat Loss & GH และ Deep Sleep</div>
+      <div class="ft-tag">Precision · Purity · Science</div>
+    </div>
+    <div>
+      <div class="fc-title">ผลิตภัณฑ์</div>
+      <ul class="fc-links">
+        <li><a href="#products">Skin Booster</a></li>
+        <li><a href="#products">Fat Loss & GH</a></li>
+        <li><a href="#products">Deep Sleep</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fc-title">ข้อมูล</div>
+      <ul class="fc-links">
+        <li><a href="#about">เกี่ยวกับเรา</a></li>
+        <li><a href="#science">งานวิจัย</a></li>
+        <li><a href="#gallery">แกลเลอรี่</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fc-title">ติดต่อ</div>
+      <ul class="fc-links">
+        <li><a href="#contact">สอบถามสินค้า</a></li>
+        <li><a href="http://www.medilivepeptide.com" target="_blank">medilivepeptide.com</a></li>
+        <li><a href="#contact">medilivepeptide</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2026 MEDILIVE PEPTIDE · For professional / research reference only</div>
+    <div class="ft-web">www.medilivepeptide.com</div>
+  </div>
+</footer>
+
+<script>
+// Custom cursor
+const cur = document.getElementById('cur');
+const cur2 = document.getElementById('cur2');
+let mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX; my=e.clientY;
+  cur.style.left=mx+'px'; cur.style.top=my+'px';
+});
+function animCursor(){
+  cx+=(mx-cx)*0.12; cy+=(my-cy)*0.12;
+  cur2.style.left=cx+'px'; cur2.style.top=cy+'px';
+  requestAnimationFrame(animCursor);
+}
+animCursor();
+
+// Scroll reveal
+const rvEls = document.querySelectorAll('.rv');
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('on'), i*60);
+    }
+  });
+},{threshold:0.08});
+rvEls.forEach(el=>obs.observe(el));
+
+// Tab switching
+function switchTab(i){
+  document.querySelectorAll('.ptab').forEach((t,idx)=>{
+    t.classList.toggle('active', idx===i);
+  });
+  document.querySelectorAll('.prod-panel').forEach((p,idx)=>{
+    p.classList.toggle('active', idx===i);
+  });
+}
+</script>
+</body>
+</html>
