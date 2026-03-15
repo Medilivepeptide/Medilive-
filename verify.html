@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MEDILIVE PEPTIDE — Verify Authenticity</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tenor+Sans&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<style>
+html,body{background:#1c2333 !important;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#1c2333;
+  --navy2:#232b3e;
+  --navy3:#2a3450;
+  --blue:#2a5db0;
+  --blue-l:#4a82d8;
+  --blue-xl:#6aa3e8;
+  --blue-glow:rgba(26,79,160,0.25);
+  --gold:#c4a060;
+  --gold-l:#d4b878;
+  --white:#ffffff;
+  --ivory:#f8f6f1;
+  --mid:rgba(255,255,255,0.55);
+  --dim:rgba(255,255,255,0.28);
+  --border:rgba(26,79,160,0.25);
+  --border-l:rgba(26,79,160,0.12);
+}
+
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#1c2333 !important;
+  color:#ffffff !important;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* BG GRID */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(26,79,160,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,79,160,0.04) 1px, transparent 1px);
+  background-size:48px 48px;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* GLOW ORBS */
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);}
+.orb1{width:500px;height:500px;top:-150px;right:-150px;background:radial-gradient(circle,rgba(26,79,160,0.2) 0%,transparent 70%);}
+.orb2{width:400px;height:400px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(10,22,40,0.8) 0%,transparent 70%);}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.2rem 2rem;
+  background:rgba(20,26,40,0.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border-l);
+}
+.logo-wrap{display:flex;flex-direction:column;gap:2px;text-decoration:none;}
+.logo-main{font-family:'Tenor Sans',serif;font-size:1rem;letter-spacing:0.32em;color:#ffffff !important;}
+.logo-sub{font-size:0.38rem;letter-spacing:0.55em;color:var(--blue-xl);font-weight:300;text-transform:uppercase;}
+.nav-tag{font-family:'Cormorant Garamond',serif;font-size:0.78rem;font-style:italic;color:var(--mid);}
+.back-btn{
+  font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--blue-xl);border:1px solid var(--border);
+  padding:0.5rem 1.2rem;text-decoration:none;
+  transition:all 0.25s;
+}
+.back-btn:hover{background:var(--blue);color:#ffffff !important;border-color:var(--blue);}
+
+/* MAIN */
+main{
+  position:relative;z-index:1;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:7rem 1.5rem 4rem;
+}
+
+/* HEADER */
+.page-header{text-align:center;margin-bottom:3.5rem;}
+.auth-badge{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:rgba(26,79,160,0.15);
+  border:1px solid var(--border);
+  padding:0.4rem 1.2rem;
+  margin-bottom:1.5rem;
+  animation:fadeUp 0.8s ease both;
+}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--blue-xl);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,143,224,0.4)}50%{opacity:0.8;box-shadow:0 0 0 6px rgba(74,143,224,0)}}
+.badge-txt{font-size:0.48rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--blue-xl);}
+.page-title{
+  font-family:'Tenor Sans',serif;
+  font-size:clamp(1.8rem,6vw,3rem);
+  letter-spacing:0.15em;
+  color:#ffffff !important;
+  line-height:1.1;
+  margin-bottom:0.5rem;
+  animation:fadeUp 0.8s 0.1s ease both;
+}
+.page-title span{color:var(--blue-l);}
+.page-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:0.95rem;font-style:italic;
+  color:var(--mid);
+  animation:fadeUp 0.8s 0.2s ease both;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* CARD */
+.verify-card{
+  width:100%;max-width:480px;
+  background:rgba(28,35,51,0.97);
+  border:1px solid var(--border);
+  backdrop-filter:blur(20px);
+  padding:2.5rem;
+  position:relative;
+  animation:fadeUp 0.8s 0.3s ease both;
+}
+.verify-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--blue-l),var(--blue-xl),transparent);
+}
+
+/* INPUT AREA */
+.input-label{
+  font-size:0.5rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--blue-xl);margin-bottom:0.6rem;display:block;
+}
+.input-wrap{position:relative;margin-bottom:1.5rem;}
+.code-input{
+  width:100%;
+  background:rgba(20,26,40,0.97);
+  border:1px solid var(--border);
+  color:#ffffff !important;
+  font-family:'DM Sans',sans-serif;
+  font-size:1rem;letter-spacing:0.1em;
+  padding:1rem 1.2rem;
+  outline:none;
+  transition:border-color 0.25s,box-shadow 0.25s;
+  text-transform:uppercase;
+}
+.code-input::placeholder{color:var(--dim);font-size:0.75rem;letter-spacing:0.05em;text-transform:none;}
+.code-input:focus{
+  border-color:var(--blue-l);
+  box-shadow:0 0 0 3px rgba(26,79,160,0.15),inset 0 0 20px rgba(26,79,160,0.05);
+}
+
+.verify-btn{
+  width:100%;
+  background:var(--blue);
+  color:#ffffff !important;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;
+  padding:1.1rem;border:none;cursor:pointer;
+  transition:all 0.25s;
+  position:relative;overflow:hidden;
+}
+.verify-btn::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.1) 0%,transparent 50%);
+  opacity:0;transition:opacity 0.25s;
+}
+.verify-btn:hover{background:var(--blue-l);}
+.verify-btn:hover::after{opacity:1;}
+.verify-btn:active{transform:scale(0.99);}
+
+/* DIVIDER */
+.or-divider{
+  display:flex;align-items:center;gap:1rem;
+  margin:1.5rem 0;color:var(--dim);font-size:0.62rem;letter-spacing:0.1em;
+}
+.or-divider::before,.or-divider::after{content:'';flex:1;height:1px;background:var(--border-l);}
+
+/* EXAMPLE CODES */
+.demo-note{
+  text-align:center;font-size:0.62rem;color:var(--dim);margin-bottom:0.8rem;
+}
+.demo-codes{display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;}
+.demo-code{
+  font-size:0.55rem;letter-spacing:0.12em;
+  border:1px solid var(--border);
+  color:var(--blue-xl);padding:0.3rem 0.8rem;
+  cursor:pointer;transition:all 0.2s;
+  font-family:'DM Sans',sans-serif;
+}
+.demo-code:hover{background:var(--blue-glow);border-color:var(--blue-l);}
+
+/* RESULT */
+.result-wrap{
+  width:100%;max-width:480px;
+  margin-top:1.5rem;
+  display:none;
+  animation:fadeUp 0.5s ease both;
+}
+.result-wrap.show{display:block;}
+
+/* AUTHENTIC */
+.result-authentic{
+  background:rgba(28,35,51,0.97);
+  border:1px solid rgba(26,79,160,0.5);
+  backdrop-filter:blur(20px);
+  padding:2rem;
+  position:relative;
+  overflow:hidden;
+}
+.result-authentic::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#22c55e,transparent);
+}
+.result-authentic::after{
+  content:'';position:absolute;
+  top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,197,94,0.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+
+.result-status{
+  display:flex;align-items:center;gap:0.8rem;
+  margin-bottom:1.5rem;
+  padding-bottom:1.5rem;
+  border-bottom:1px solid var(--border-l);
+}
+.status-icon{
+  width:42px;height:42px;
+  background:rgba(34,197,94,0.12);
+  border:1px solid rgba(34,197,94,0.3);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0;
+}
+.status-title{font-family:'Tenor Sans',serif;font-size:1.1rem;letter-spacing:0.08em;color:#22c55e;margin-bottom:2px;}
+.status-sub{font-size:0.65rem;color:var(--mid);font-weight:300;}
+
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;}
+.info-item{}
+.info-key{
+  font-size:0.45rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--blue-xl);margin-bottom:0.3rem;
+}
+.info-val{font-size:0.82rem;color:#ffffff !important;font-weight:300;letter-spacing:0.04em;}
+.info-val.highlight{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;color:var(--gold-l);font-style:italic;
+}
+
+.result-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:1.2rem;border-top:1px solid var(--border-l);
+}
+.result-brand{font-family:'Tenor Sans',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--dim);}
+.result-seal{
+  display:flex;align-items:center;gap:0.4rem;
+  font-size:0.45rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue-xl);
+}
+.seal-dot{width:5px;height:5px;border-radius:50%;background:var(--blue-xl);}
+
+/* NOT FOUND */
+.result-notfound{
+  background:rgba(28,35,51,0.97);
+  border:1px solid rgba(239,68,68,0.25);
+  padding:1.8rem;text-align:center;
+}
+.result-notfound::before{
+  content:'';display:block;
+  width:100%;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(239,68,68,0.5),transparent);
+  margin-bottom:1.5rem;
+}
+.nf-icon{font-size:1.5rem;margin-bottom:0.5rem;}
+.nf-title{font-family:'Tenor Sans',serif;font-size:1rem;letter-spacing:0.1em;color:#ef4444;margin-bottom:0.4rem;}
+.nf-sub{font-size:0.7rem;color:var(--mid);font-weight:300;line-height:1.8;}
+
+/* BOTTOM INFO */
+.bottom-info{
+  margin-top:2.5rem;text-align:center;
+  animation:fadeUp 0.8s 0.4s ease both;
+}
+.bottom-info p{font-size:0.62rem;color:var(--dim);line-height:2;font-weight:300;}
+.bottom-info a{color:var(--blue-xl);text-decoration:none;}
+
+/* FOOTER */
+footer{
+  position:relative;z-index:1;
+  text-align:center;padding:1.5rem;
+  border-top:1px solid var(--border-l);
+  font-size:0.55rem;color:var(--dim);letter-spacing:0.08em;
+}
+</style>
+</head>
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<nav>
+  <a href="#" class="logo-wrap">
+    <span class="logo-main">MEDILIVE</span>
+    <span class="logo-sub">P &nbsp; E &nbsp; P &nbsp; T &nbsp; I &nbsp; D &nbsp; E</span>
+  </a>
+  <span class="nav-tag">Authenticity Verification</span>
+  <a href="index.html" class="back-btn">← กลับหน้าหลัก</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="auth-badge">
+      <span class="badge-dot"></span>
+      <span class="badge-txt">Official Verification System</span>
+    </div>
+    <h1 class="page-title">ตรวจสอบ<span>ความแท้</span></h1>
+    <p class="page-sub">MEDILIVE PEPTIDE · Authenticity Verification Portal</p>
+  </div>
+
+  <div class="verify-card">
+    <label class="input-label">รหัสตรวจสอบ · Verification Code</label>
+    <div class="input-wrap">
+      <input
+        type="text"
+        class="code-input"
+        id="codeInput"
+        placeholder="เช่น MLP-000001"
+        maxlength="12"
+        oninput="this.value=this.value.toUpperCase()"
+        onkeydown="if(event.key==='Enter')verifyCode()"
+      />
+    </div>
+    <button class="verify-btn" onclick="verifyCode()">
+      ตรวจสอบสินค้า →
+    </button>
+
+    <div class="or-divider">ตัวอย่างรหัส</div>
+    <div class="demo-note">กดเพื่อทดลองระบบ</div>
+    <div class="demo-codes">
+      <span class="demo-code" onclick="tryCode('MLP-000002')">MLP-000002</span>
+      <span class="demo-code" onclick="tryCode('MLP-000005')">MLP-000005</span>
+      <span class="demo-code" onclick="tryCode('MLP-000010')">MLP-000010</span>
+    </div>
+  </div>
+
+  <div class="result-wrap" id="resultWrap"></div>
+
+  <div class="bottom-info">
+    <p>รหัสตรวจสอบอยู่บนบรรจุภัณฑ์สินค้า MEDILIVE PEPTIDE<br/>
+    หากพบปัญหาติดต่อ <a href="#">medilivepeptide</a> ทาง Line Official</p>
+  </div>
+</main>
+
+<footer>
+  © 2026 MEDILIVE PEPTIDE · Precision · Purity · Science · For professional / research reference only
+</footer>
+
+
+<script>
+const SHEET_ID = '1-6fka-MLrCzqtmwF3H2aLWa2TbvFk-1TM3RMBNc-7uk';
+const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Sheet1`;
+
+let db = {};
+let dbLoaded = false;
+
+async function loadSheet() {
+  try {
+    const res = await fetch(CSV_URL, {cache: 'no-store'});
+    if (!res.ok) throw new Error('fetch failed');
+    const text = await res.text();
+    const rows = text.trim().split('\n');
+    rows.shift();
+    rows.forEach(row => {
+      // parse CSV properly (handle quoted fields)
+      const cols = row.match(/(".*?"|[^,]+)(?=,|$)/g) || row.split(',');
+      const clean = cols.map(c => c.trim().replace(/^"|"$/g, ''));
+      if (clean[0]) {
+        db[clean[0].toUpperCase()] = {
+          batch:   clean[1] || '-',
+          lot:     clean[2] || '-',
+          date:    clean[3] || '-',
+          product: clean[4] || '-',
+          size:    clean[5] || '-',
+        };
+      }
+    });
+    dbLoaded = true;
+    console.log('Loaded', Object.keys(db).length, 'records');
+  } catch(e) {
+    console.error('Sheet load error:', e);
+    dbLoaded = false;
+  }
+}
+
+loadSheet();
+
+function tryCode(code) {
+  document.getElementById('codeInput').value = code;
+  verifyCode();
+}
+
+async function verifyCode() {
+  const code = document.getElementById('codeInput').value.trim().toUpperCase();
+  const wrap = document.getElementById('resultWrap');
+  if (!code) return;
+
+  wrap.className = 'result-wrap show';
+  wrap.innerHTML = `
+    <div style="text-align:center;padding:2rem;color:var(--mid);">
+      <div style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;">
+        กำลังตรวจสอบ...
+      </div>
+    </div>`;
+
+  if (!dbLoaded) {
+    await loadSheet();
+  }
+
+  await new Promise(r => setTimeout(r, 600));
+
+  const data = db[code];
+  if (data) {
+    wrap.innerHTML = `
+      <div class="result-authentic">
+        <div class="result-status">
+          <div class="status-icon">✓</div>
+          <div>
+            <div class="status-title">✓ ยืนยัน — สินค้าของแท้</div>
+            <div class="status-sub">MEDILIVE PEPTIDE Official Product · Verified Authentic</div>
+          </div>
+        </div>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-key">รหัสตรวจสอบ</div>
+            <div class="info-val">${code}</div>
+          </div>
+          <div class="info-item">
+            <div class="info-key">สินค้า</div>
+            <div class="info-val highlight">${data.product}</div>
+          </div>
+          <div class="info-item">
+            <div class="info-key">Batch Number</div>
+            <div class="info-val">${data.batch}</div>
+          </div>
+          <div class="info-item">
+            <div class="info-key">Lot Number</div>
+            <div class="info-val">${data.lot}</div>
+          </div>
+          <div class="info-item">
+            <div class="info-key">วันที่ผลิต</div>
+            <div class="info-val">${data.date}</div>
+          </div>
+          <div class="info-item">
+            <div class="info-key">ขนาด</div>
+            <div class="info-val">${data.size}</div>
+          </div>
+        </div>
+        <div class="result-footer">
+          <span class="result-brand">MEDILIVE PEPTIDE</span>
+          <div class="result-seal">
+            <span class="seal-dot"></span>
+            Official Authentication
+          </div>
+        </div>
+      </div>`;
+  } else {
+    wrap.innerHTML = `
+      <div class="result-notfound">
+        <div class="nf-icon">✕</div>
+        <div class="nf-title">ไม่พบรหัสในระบบ</div>
+        <div class="nf-sub">
+          รหัส <strong style="color:var(--white)">${code}</strong> ไม่ถูกต้องหรือไม่มีในระบบ<br/>
+          กรุณาตรวจสอบรหัสอีกครั้ง หรือติดต่อ MEDILIVE PEPTIDE
+        </div>
+      </div>`;
+  }
+}
+</script>
+</body>
+</html>
